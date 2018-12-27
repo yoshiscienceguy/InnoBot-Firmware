@@ -431,9 +431,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 368.53 //fdp
-  #define DEFAULT_bedKi 60.79
-  #define DEFAULT_bedKd 558.51
+  #define DEFAULT_bedKp 368.53 //fdp ----------Use PID autotune for heating problems with hot end and heat bed
+  #define DEFAULT_bedKi 60.79 // Command for hot end M303 E0 S200 C8
+  #define DEFAULT_bedKd 558.51 //command for heat bed M303 E-1 S60 C8
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
