@@ -35,6 +35,7 @@
  * Advanced settings can be found in Configuration_adv.h
  *
  */
+ 
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 #define CONFIGURATION_H_VERSION 010109
@@ -530,11 +531,11 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true // set to true to invert the logic of the probe. //fdp
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false // set to true to invert the logic of the probe. //fdp
 
 /**
  * Stepper Drivers
@@ -550,13 +551,13 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
-#define X_DRIVER_TYPE  TMC2208 //fdp
-#define Y_DRIVER_TYPE  TMC2208 //fdp
-#define Z_DRIVER_TYPE  TMC2208 //fdp
+//#define X_DRIVER_TYPE  TMC2208 //fdp
+//#define Y_DRIVER_TYPE  TMC2208 //fdp
+//#define Z_DRIVER_TYPE  TMC2208 //fdp
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
-#define E0_DRIVER_TYPE TMC2208 //fdp
+//#define E0_DRIVER_TYPE TMC2208 //fdp
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -674,7 +675,7 @@
  *
  * Enable this option for a probe connected to the Z Min endstop pin.
  */
-//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN //fdp
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN //fdp
 
 /**
  * Z_MIN_PROBE_ENDSTOP
@@ -695,8 +696,8 @@
  * disastrous consequences. Use with caution and do your homework.
  *
  */
-#define Z_MIN_PROBE_ENDSTOP //fdp
-#define Z_MIN_PROBE_PIN 11
+//#define Z_MIN_PROBE_ENDSTOP //fdp
+//#define Z_MIN_PROBE_PIN 11
 
 /**
  * Probe Type
@@ -777,8 +778,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 10  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -50  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -15  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
@@ -887,13 +888,13 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 235 //fdp
-#define Y_MAX_POS 235 //fdp
+#define X_MAX_POS X_BED_SIZE //fdp
+#define Y_MAX_POS Y_BED_SIZE //fdp
 #define Z_MAX_POS 250 //fdp
 
-#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
-#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
-#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
+//#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
+//#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
+//#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
 
 /**
  * Software Endstops
@@ -1029,10 +1030,10 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  //#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  //#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
+  #define LEFT_PROBE_BED_POSITION X_MIN_POS - X_PROBE_OFFSET_FROM_EXTRUDER
+  #define RIGHT_PROBE_BED_POSITION X_MAX_POS + (X_PROBE_OFFSET_FROM_EXTRUDER)
+  #define FRONT_PROBE_BED_POSITION Y_MIN_POS - Y_PROBE_OFFSET_FROM_EXTRUDER
+  #define BACK_PROBE_BED_POSITION Y_MAX_POS + (Y_PROBE_OFFSET_FROM_EXTRUDER)
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1146,7 +1147,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
@@ -1534,7 +1535,7 @@
 //
 // Note: Usually sold with a white PCB.
 //
-#define REPRAP_DISCOUNT_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_SMART_CONTROLLER
 
 //
 // ULTIMAKER Controller.
@@ -1661,7 +1662,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER //fdp
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER //fdp
 
 //
 // ReprapWorld Graphical LCD
