@@ -516,15 +516,15 @@
 //#define USE_ZMAX_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
-#define ENDSTOPPULLUPS
+//#define ENDSTOPPULLUPS //shoeb
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
   //#define ENDSTOPPULLUP_XMAX
   //#define ENDSTOPPULLUP_YMAX
   //#define ENDSTOPPULLUP_ZMAX
-  //#define ENDSTOPPULLUP_XMIN
-  //#define ENDSTOPPULLUP_YMIN
-  //#define ENDSTOPPULLUP_ZMIN
+  #define ENDSTOPPULLUP_XMIN //shoeb
+  #define ENDSTOPPULLUP_YMIN //shoeb
+  //#define ENDSTOPPULLUP_ZMIN //shoeb
   //#define ENDSTOPPULLUP_ZMIN_PROBE
 #endif
 
@@ -778,9 +778,9 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -50  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -15  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -34  // X offset: -left  +right  [of the nozzle] //shoeb
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -8  // Y offset: -front +behind [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER 1   // Z offset: -below +above  [the nozzle] //shoeb
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -869,8 +869,8 @@
 
 //#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-//#define Z_HOMING_HEIGHT 4  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
-                             // Be sure you have this distance over your Z_MAX_POS in case.
+#define Z_HOMING_HEIGHT 18 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ... //shoeb
+                             // Be sure you have this distance over your Z_MAX_POS in case. 
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
@@ -892,9 +892,9 @@
 #define Y_MAX_POS Y_BED_SIZE //fdp
 #define Z_MAX_POS 250 //fdp
 
-//#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
-//#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
-//#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
+#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
+#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
+#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
 
 /**
  * Software Endstops
@@ -981,7 +981,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR //shoeb
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING //fdp
 
@@ -1030,10 +1030,10 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION X_MIN_POS - X_PROBE_OFFSET_FROM_EXTRUDER
-  #define RIGHT_PROBE_BED_POSITION X_MAX_POS + (X_PROBE_OFFSET_FROM_EXTRUDER)
-  #define FRONT_PROBE_BED_POSITION Y_MIN_POS - Y_PROBE_OFFSET_FROM_EXTRUDER
-  #define BACK_PROBE_BED_POSITION Y_MAX_POS + (Y_PROBE_OFFSET_FROM_EXTRUDER)
+  #define LEFT_PROBE_BED_POSITION 50 //shoeb
+  #define RIGHT_PROBE_BED_POSITION 180 //shoeb
+  #define FRONT_PROBE_BED_POSITION 50 //shoeb
+  #define BACK_PROBE_BED_POSITION 180 //shoeb
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1261,7 +1261,7 @@
 // @section temperature
 
 // Preheat Constants
-#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_HOTEND 210
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
