@@ -780,7 +780,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER -48  // X offset: -left  +right  [of the nozzle] //shoeb
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -16  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.25   // Z offset: -below +above  [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.45   // Z offset: -below +above  [the nozzle] //shoeb
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -1025,14 +1025,14 @@
 
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
-  // Set the number of grid points per dimension.
+  // Set the number of grid points per dimension
   #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 20 //shoeb
-  #define RIGHT_PROBE_BED_POSITION 180 //shoeb
-  #define FRONT_PROBE_BED_POSITION 20 //shoeb
+  #define LEFT_PROBE_BED_POSITION  10 //shoeb
+  #define RIGHT_PROBE_BED_POSITION 160 //shoeb
+  #define FRONT_PROBE_BED_POSITION 30 //shoeb
   #define BACK_PROBE_BED_POSITION 200 //shoeb
 
   // Probe along the Y axis, advancing X after each column
