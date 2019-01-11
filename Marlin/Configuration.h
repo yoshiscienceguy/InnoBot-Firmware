@@ -554,7 +554,7 @@
  */
 //#define X_DRIVER_TYPE  TMC2130 //fdp
 //#define Y_DRIVER_TYPE  TMC2130 //fdp
-#define Z_DRIVER_TYPE  TMC2130 //fdp
+//#define Z_DRIVER_TYPE  TMC2130 //fdp
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
@@ -893,9 +893,9 @@
 #define Y_MAX_POS Y_BED_SIZE //fdp
 #define Z_MAX_POS 250 //fdp
 
-#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
-#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
-#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
+//#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
+//#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
+//#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
 
 /**
  * Software Endstops
