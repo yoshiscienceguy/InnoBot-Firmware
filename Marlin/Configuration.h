@@ -781,7 +781,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER -48  // X offset: -left  +right  [of the nozzle] //shoeb
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -16  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.45   // Z offset: -below +above  [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.72   // Z offset: -below +above  [the nozzle] //shoeb
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
