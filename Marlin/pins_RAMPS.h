@@ -128,13 +128,13 @@
  */
 #if ENABLED(TMC_USE_SW_SPI)
   #ifndef TMC_SW_MOSI
-    #define TMC_SW_MOSI    51
+    #define TMC_SW_MOSI    66
   #endif
   #ifndef TMC_SW_MISO
-    #define TMC_SW_MISO    50
+    #define TMC_SW_MISO    44
   #endif
   #ifndef TMC_SW_SCK
-    #define TMC_SW_SCK     52
+    #define TMC_SW_SCK     64
   #endif
 #endif
 
