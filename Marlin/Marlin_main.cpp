@@ -2941,7 +2941,7 @@ void clean_up_after_endstop_or_probe_move() {
           #elif CORE_IS_XZ && Z_SENSORLESS
             tmc_sensorless_homing(stepperZ, enable);
           #endif
-          break;
+          break;  
       #endif
       #if Y_SENSORLESS
         case Y_AXIS:

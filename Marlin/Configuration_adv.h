@@ -382,9 +382,9 @@
 // @section homing
 
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
-#define X_HOME_BUMP_MM 5
-#define Y_HOME_BUMP_MM 5
-#define Z_HOME_BUMP_MM 2
+#define X_HOME_BUMP_MM 0  //5
+#define Y_HOME_BUMP_MM 0  //shoeb 5
+#define Z_HOME_BUMP_MM 2  
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 //#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
 
@@ -1140,10 +1140,10 @@
    * The default SW SPI pins are defined the respective pins files,
    * but you can override or define them here.
    */
-  #define TMC_USE_SW_SPI
-  #define TMC_SW_MOSI       51
-  #define TMC_SW_MISO       50
-  #define TMC_SW_SCK        52
+  //#define TMC_USE_SW_SPI
+  //#define TMC_SW_MOSI       51
+  //#define TMC_SW_MISO       50
+  //#define TMC_SW_SCK        52
 
   /**
    * Use Trinamic's ultra quiet stepping mode.
@@ -1176,7 +1176,7 @@
    * STEALTHCHOP needs to be enabled.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD //fdp
+  //#define HYBRID_THRESHOLD //fdp
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
@@ -1202,12 +1202,12 @@
    * It is advised to set X/Y/Z_HOME_BUMP_MM to 0.
    * M914 X/Y/Z to live tune the setting
    */
-  //#define SENSORLESS_HOMING // TMC2130 only
+  #define SENSORLESS_HOMING // TMC2130 only //shoeb
 
   #if ENABLED(SENSORLESS_HOMING)
     #define X_HOMING_SENSITIVITY  8
-    #define Y_HOMING_SENSITIVITY  8
-    #define Z_HOMING_SENSITIVITY  8
+    #define Y_HOMING_SENSITIVITY  8 
+    #define Z_HOMING_SENSITIVITY  2
   #endif
 
   /**
