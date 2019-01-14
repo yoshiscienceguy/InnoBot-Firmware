@@ -1,0 +1,4 @@
+M914 - read sensitivity
+G28 - homes
+M502 M500 - clear eeprom
+M18 - Release all motors
