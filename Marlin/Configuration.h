@@ -558,7 +558,7 @@
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 #define Z2_DRIVER_TYPE TMC2130
-//#define E0_DRIVER_TYPE TMC2208 //fdp
+#define E0_DRIVER_TYPE TMC2130 //fdp
 //#define E1_DRIVER_TYPE TMC2130
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -781,7 +781,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER -45  // X offset: -left  +right  [of the nozzle] //shoeb
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -2  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.78   // Z offset: -below +above  [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.65    // Z offset: -below +above  [the nozzle] //shoeb
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -858,7 +858,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false //shoeb
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
