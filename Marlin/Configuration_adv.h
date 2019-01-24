@@ -1176,7 +1176,7 @@
    * STEALTHCHOP needs to be enabled.
    * M913 X/Y/Z/E to live tune the setting
    */
-  //#define HYBRID_THRESHOLD //fdp
+  #define HYBRID_THRESHOLD //fdp
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
@@ -1205,8 +1205,8 @@
   #define SENSORLESS_HOMING // TMC2130 only //shoeb
 
   #if ENABLED(SENSORLESS_HOMING)
-    #define X_HOMING_SENSITIVITY  13
-    #define Y_HOMING_SENSITIVITY  10
+    #define X_HOMING_SENSITIVITY  11
+    #define Y_HOMING_SENSITIVITY  9
     //#define Z_HOMING_SENSITIVITY  8
   #endif
 
