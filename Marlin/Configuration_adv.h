@@ -1102,13 +1102,13 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          750  // rms current in mA. Multiply by 1.41 for peak current. fdp
+  #define X_CURRENT          900  // rms current in mA. Multiply by 1.41 for peak current. fdp
   #define X_MICROSTEPS        16  // 0..256
 
-  #define Y_CURRENT          750 //fdp
+  #define Y_CURRENT          900 //fdp
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          750 //fdp
+  #define Z_CURRENT          900 //fdp
   #define Z_MICROSTEPS        16
 
   #define X2_CURRENT         800
@@ -1117,10 +1117,10 @@
   #define Y2_CURRENT         800
   #define Y2_MICROSTEPS       16
 
-  #define Z2_CURRENT         750
+  #define Z2_CURRENT         900 //fdp
   #define Z2_MICROSTEPS       16
 
-  #define E0_CURRENT         800 //fdp
+  #define E0_CURRENT         900 //fdp
   #define E0_MICROSTEPS       16
 
   #define E1_CURRENT         800
@@ -1176,7 +1176,7 @@
    * STEALTHCHOP needs to be enabled.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD //fdp
+  //#define HYBRID_THRESHOLD //fdp
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
