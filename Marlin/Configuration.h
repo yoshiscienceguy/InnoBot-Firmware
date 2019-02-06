@@ -433,10 +433,12 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 368.53 //fdp ----------Use PID autotune for heating problems with hot end and heat bed
-  #define DEFAULT_bedKi 60.79 // Command for hot end M303 E0 S200 C8
-  #define DEFAULT_bedKd 558.51 //command for heat bed M303 E-1 S60 C8
 
+  #define DEFAULT_bedKp 633.72
+  #define DEFAULT_bedKi 108.95
+  #define DEFAULT_bedKd 921.51
+
+  
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
   //#define DEFAULT_bedKp 97.1
@@ -625,7 +627,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000 } //fdp
+#define DEFAULT_MAX_ACCELERATION      { 800, 800, 100, 5000 } //fdp
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -635,9 +637,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          600    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -647,10 +649,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 10.0 //fdp
-#define DEFAULT_YJERK                 10.0 //fdp
-#define DEFAULT_ZJERK                  0.4 //fdp
-#define DEFAULT_EJERK                  5.0 //fdp
+#define DEFAULT_XJERK                 20.0
+#define DEFAULT_YJERK                 20.0
+#define DEFAULT_ZJERK                  0.4
+#define DEFAULT_EJERK                  5.0
 
 /**
  * S-Curve Acceleration
