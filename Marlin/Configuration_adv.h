@@ -1108,7 +1108,7 @@
   #define Y_CURRENT          900 //fdp
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          900 //fdp
+  #define Z_CURRENT          750 //fdp
   #define Z_MICROSTEPS        16
 
   #define X2_CURRENT         800
@@ -1117,7 +1117,7 @@
   #define Y2_CURRENT         800
   #define Y2_MICROSTEPS       16
 
-  #define Z2_CURRENT         900 //fdp
+  #define Z2_CURRENT         750 //fdp
   #define Z2_MICROSTEPS       16
 
   #define E0_CURRENT         900 //fdp
