@@ -182,7 +182,7 @@
   #define MSG_EDITING_STOPPED                 _UxGT("Mesh Editing Stopped")
 #endif
 #ifndef MSG_USER_MENU
-  #define MSG_USER_MENU                       _UxGT("Quick Print Setup")  //_UxGT("Custom Commands") //Shoeb
+  #define MSG_USER_MENU                       _UxGT("Custom Commands")
 #endif
 #ifndef MSG_UBL_DOING_G29
   #define MSG_UBL_DOING_G29                   _UxGT("Doing G29")
