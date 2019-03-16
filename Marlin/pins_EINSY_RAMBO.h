@@ -151,6 +151,7 @@
 #if ENABLED(ULTRA_LCD)
 
   #define KILL_PIN         32
+  #define SD_DETECT_PIN     15
 
   #if ENABLED(NEWPANEL)
 
