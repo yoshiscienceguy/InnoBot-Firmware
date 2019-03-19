@@ -382,9 +382,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 21.35
-  #define DEFAULT_Ki 1.52
-  #define DEFAULT_Kd 75.22
+  #define DEFAULT_Kp 20.79
+  #define DEFAULT_Ki 1.69
+  #define DEFAULT_Kd 63.87
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -434,9 +434,9 @@
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
 
-  #define DEFAULT_bedKp 633.72
-  #define DEFAULT_bedKi 108.95
-  #define DEFAULT_bedKd 921.51
+  #define DEFAULT_bedKp 472.37
+  #define DEFAULT_bedKi 75.90
+  #define DEFAULT_bedKd 734.94
 
   
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
@@ -781,12 +781,14 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -45  // X offset: -left  +right  [of the nozzle] //shoeb
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -2  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.11    // Z offset: -below +above  [the nozzle] //shoeb
+#define X_PROBE_OFFSET_FROM_EXTRUDER 21  // X offset: -left  +right  [of the nozzle] //shoeb
+#define Y_PROBE_OFFSET_FROM_EXTRUDER 6  // Y offset: -front +behind [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.61    // Z offset: -below +above  [the nozzle] //shoeb
+
+
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 10
+#define MIN_PROBE_EDGE 10 //FDP
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -853,9 +855,9 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true
 #define INVERT_Y_DIR false //fdp
-#define INVERT_Z_DIR true
+#define INVERT_Z_DIR false
 
 // @section extruder
 
@@ -884,20 +886,16 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235 //fdp
-#define Y_BED_SIZE 235 //fdp
+#define X_BED_SIZE 250 //fdp
+#define Y_BED_SIZE 250 //fdp
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE //fdp
+#define X_MAX_POS X_BED_SIZE//fdp
 #define Y_MAX_POS Y_BED_SIZE //fdp
 #define Z_MAX_POS 250 //fdp
-
-//#define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS) //fdp
-//#define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS) //fdp
-//#define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) //fdp
 
 /**
  * Software Endstops
@@ -1033,10 +1031,11 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION  10 //shoeb
-  #define RIGHT_PROBE_BED_POSITION 180 //shoeb
-  #define FRONT_PROBE_BED_POSITION 20 //shoeb
-  #define BACK_PROBE_BED_POSITION 200 //shoeb
+  
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X //shoeb
+  #define RIGHT_PROBE_BED_POSITION 225
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y
+  #define BACK_PROBE_BED_POSITION 120
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1133,11 +1132,11 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-#define BED_CENTER_AT_110_110 //shoeb
+#define BED_CENTER_AT_1_0 //shoeb
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
+//#define MANUAL_X_HOME_POS 0 //fdp
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 
@@ -1150,7 +1149,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-#define Z_SAFE_HOMING
+//#define Z_SAFE_HOMING //fdp
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
