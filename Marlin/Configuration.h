@@ -619,7 +619,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 50 } //fdp
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 5, 45 } //fdp
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -627,7 +627,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 800, 800, 100, 5000 } //fdp
+#define DEFAULT_MAX_ACCELERATION      { 180, 180, 10, 1000 } //fdp
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -637,7 +637,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          600    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          180    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -783,7 +783,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 21  // X offset: -left  +right  [of the nozzle] //shoeb
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 6  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.61    // Z offset: -below +above  [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.41    // Z offset: -below +above  [the nozzle] //shoeb
 
 
 
@@ -886,8 +886,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 250 //fdp
-#define Y_BED_SIZE 250 //fdp
+#define X_BED_SIZE 240 //fdp
+#define Y_BED_SIZE 240 //fdp
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -895,7 +895,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE//fdp
 #define Y_MAX_POS Y_BED_SIZE //fdp
-#define Z_MAX_POS 250 //fdp
+#define Z_MAX_POS 260 //fdp
 
 /**
  * Software Endstops
@@ -1033,9 +1033,9 @@
   // Set the boundaries for probing (where the probe can reach).
   
   #define LEFT_PROBE_BED_POSITION MIN_PROBE_X //shoeb
-  #define RIGHT_PROBE_BED_POSITION 225
+  #define RIGHT_PROBE_BED_POSITION 230
   #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y
-  #define BACK_PROBE_BED_POSITION 120
+  #define BACK_PROBE_BED_POSITION 230
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
