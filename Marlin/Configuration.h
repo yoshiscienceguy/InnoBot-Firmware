@@ -1,5 +1,3 @@
-#include <U8glib.h>
-
 /**
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
@@ -617,7 +615,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 2, 45 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 150, 45 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -625,7 +623,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 180, 180, 10, 200 }
+#define DEFAULT_MAX_ACCELERATION      { 180, 180, 100, 200 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -635,9 +633,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          60    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  60    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   120    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          180    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
