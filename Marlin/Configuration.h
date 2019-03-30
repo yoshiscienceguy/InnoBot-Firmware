@@ -619,7 +619,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 5, 45 } //fdp
+#define DEFAULT_MAX_FEEDRATE          { 180, 180, 5, 45 } //fdp
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -627,7 +627,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 180, 180, 10, 1000 } //fdp
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 10, 1000 } //fdp
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -637,7 +637,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          180    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          150    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -649,8 +649,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 20.0
-#define DEFAULT_YJERK                 20.0
+#define DEFAULT_XJERK                 50.0
+#define DEFAULT_YJERK                 50.0
 #define DEFAULT_ZJERK                  0.4
 #define DEFAULT_EJERK                  5.0
 
@@ -783,7 +783,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 21  // X offset: -left  +right  [of the nozzle] //shoeb
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 6  // Y offset: -front +behind [the nozzle] //shoeb
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.41    // Z offset: -below +above  [the nozzle] //shoeb
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.60    // Z offset: -below +above  [the nozzle] //shoeb
 
 
 
