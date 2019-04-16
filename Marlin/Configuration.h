@@ -561,7 +561,7 @@
 //#define Y2_DRIVER_TYPE A4988
 #define Z2_DRIVER_TYPE TMC2130
 #define E0_DRIVER_TYPE TMC2130 //fdp
-//#define E1_DRIVER_TYPE TMC2130
+//#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
@@ -1033,9 +1033,9 @@
   // Set the boundaries for probing (where the probe can reach).
   
   #define LEFT_PROBE_BED_POSITION MIN_PROBE_X //shoeb
-  #define RIGHT_PROBE_BED_POSITION 230
+  #define RIGHT_PROBE_BED_POSITION 220
   #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y
-  #define BACK_PROBE_BED_POSITION 230
+  #define BACK_PROBE_BED_POSITION 220
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
