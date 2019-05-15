@@ -781,7 +781,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.6   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 10
+#define MIN_PROBE_EDGE 5
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -790,7 +790,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_SPEED_SLOW Z_PROBE_SPEED_FAST 
 
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
@@ -879,8 +879,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235
-#define Y_BED_SIZE 235
+#define X_BED_SIZE 290
+#define Y_BED_SIZE 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -888,7 +888,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 265
+#define Z_MAX_POS 235
 
 /**
  * Software Endstops
@@ -1025,13 +1025,13 @@
 
   // Set the boundaries for probing (where the probe can reach).
 //  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 5
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 1
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  #define RIGHT_PROBE_BED_POSITION 180
+  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 10
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define FRONT_PROBE_BED_POSITION 30
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+1
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
-  #define BACK_PROBE_BED_POSITION 210
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 20
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1154,7 +1154,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (10*60)
 
 // @section calibrate
 
