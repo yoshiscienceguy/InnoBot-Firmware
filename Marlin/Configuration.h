@@ -379,10 +379,15 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // Ultimaker
-  #define DEFAULT_Kp 22.50
-  #define DEFAULT_Ki 2.33
-  #define DEFAULT_Kd 54.36
+  // Innobot Jr
+  //#define DEFAULT_Kp 22.50
+  //#define DEFAULT_Ki 2.33
+  //#define DEFAULT_Kd 54.36
+
+  //Innobot Jumbo
+  #define DEFAULT_Kp 22.45
+  #define DEFAULT_Ki 1.92
+  #define DEFAULT_Kd 65.74
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -431,10 +436,17 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 450.38
-  #define DEFAULT_bedKi 88.67
-  #define DEFAULT_bedKd 571.87
+  //Innobot Jr
+  //#define DEFAULT_bedKp 450.38
+  //#define DEFAULT_bedKi 88.67
+  //#define DEFAULT_bedKd 571.87
 
+  //Innobot Jumbo
+  #define DEFAULT_bedKp 281.20
+  #define DEFAULT_bedKi 52.01
+  #define DEFAULT_bedKd 380.12
+
+  
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
   //#define DEFAULT_bedKp 97.1
@@ -608,14 +620,18 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+//Innobot Jr
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
+
+//Innobot Jumbo
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 109.4 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 180, 180, 5, 45 }
+#define DEFAULT_MAX_FEEDRATE          { 180, 180, 10, 45 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -623,7 +639,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 10, 1000 }
+#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 1000, 2500 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -633,9 +649,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          150    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          700    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  700    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   700    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -645,10 +661,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 50.0
-#define DEFAULT_YJERK                 50.0
+#define DEFAULT_XJERK                 5.0
+#define DEFAULT_YJERK                 5.0
 #define DEFAULT_ZJERK                  0.4
-#define DEFAULT_EJERK                  5.0
+#define DEFAULT_EJERK                 5.0
 
 /**
  * S-Curve Acceleration
@@ -880,13 +896,13 @@
 
 // The size of the print bed
 //Jr Version
-#define X_BED_SIZE 185
-#define Y_BED_SIZE 235
-#define Z_MAX_POS 235
+//#define X_BED_SIZE 185
+//#define Y_BED_SIZE 235
+//#define Z_MAX_POS 235
 //Jumbo
-//#define X_BED_SIZE 290
-//#define Y_BED_SIZE 300
-//#define Z_MAX_POS 280
+#define X_BED_SIZE 290
+#define Y_BED_SIZE 300
+#define Z_MAX_POS 280
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1161,7 +1177,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (15*60)
+#define HOMING_FEEDRATE_Z  (50*60)
 
 // @section calibrate
 
