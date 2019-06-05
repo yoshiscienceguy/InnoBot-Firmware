@@ -1052,9 +1052,9 @@
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
   #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 10
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+25
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+1
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
-  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 10
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 20
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1172,7 +1172,7 @@
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT (MIN_PROBE_X) //((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT (MIN_PROBE_Y + 20) //((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT (MIN_PROBE_Y) //((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
