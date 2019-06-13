@@ -624,14 +624,14 @@
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
 
 //Innobot Jumbo
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 109.4 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 85}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 180, 180, 10, 45 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 5, 45 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -639,7 +639,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 1000, 2500 }
+#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 500, 1500 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -649,9 +649,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          700    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  700    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   700    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -827,12 +827,12 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE   3 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -5 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -1048,13 +1048,13 @@
 
   // Set the boundaries for probing (where the probe can reach).
 //  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 1
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 10
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
   #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 10
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+1
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+10
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
-  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 20
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 10
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
