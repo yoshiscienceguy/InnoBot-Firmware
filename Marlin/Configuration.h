@@ -382,9 +382,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 20.79
-  #define DEFAULT_Ki 1.69
-  #define DEFAULT_Kd 63.87
+  #define DEFAULT_Kp 11.48
+  #define DEFAULT_Ki .56
+  #define DEFAULT_Kd 59.03
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -434,9 +434,9 @@
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
 
-  #define DEFAULT_bedKp 472.37
-  #define DEFAULT_bedKi 75.90
-  #define DEFAULT_bedKd 734.94
+  #define DEFAULT_bedKp 129.34
+  #define DEFAULT_bedKi 23.57
+  #define DEFAULT_bedKd 177.47
 
   
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
@@ -886,8 +886,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 240 //fdp
-#define Y_BED_SIZE 240 //fdp
+#define X_BED_SIZE 280 //fdp
+#define Y_BED_SIZE 330 //fdp
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -895,7 +895,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE//fdp
 #define Y_MAX_POS Y_BED_SIZE //fdp
-#define Z_MAX_POS 260 //fdp
+#define Z_MAX_POS 230 //fdp
 
 /**
  * Software Endstops
@@ -1032,10 +1032,10 @@
 
   // Set the boundaries for probing (where the probe can reach).
   
-  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X //shoeb
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 30//shoeb
   #define RIGHT_PROBE_BED_POSITION 220
-  #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y
-  #define BACK_PROBE_BED_POSITION 220
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_Y + 72
+  #define BACK_PROBE_BED_POSITION 275
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1149,11 +1149,11 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING //fdp
+#define Z_SAFE_HOMING //fdp
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT ((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT MIN_PROBE_X + 30    // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT MIN_PROBE_Y + 72    // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
