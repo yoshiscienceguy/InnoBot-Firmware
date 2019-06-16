@@ -624,14 +624,14 @@
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
 
 //Innobot Jumbo
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 85}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 5, 45 }
+#define DEFAULT_MAX_FEEDRATE          { 180, 180, 5, 45 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -639,7 +639,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 500, 1500 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 10, 1000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -649,9 +649,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          5000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   5000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -661,8 +661,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 5.0
-#define DEFAULT_YJERK                 5.0
+#define DEFAULT_XJERK                 20
+#define DEFAULT_YJERK                 20
 #define DEFAULT_ZJERK                  0.4
 #define DEFAULT_EJERK                 5.0
 
@@ -806,7 +806,8 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW Z_PROBE_SPEED_FAST 
+#define Z_PROBE_SPEED_SLOW HOMING_FEEDRATE_Z 
+//#define Z_PROBE_SPEED_SLOW Z_PROBE_SPEED_FAST 
 
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
@@ -866,7 +867,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR false
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
@@ -902,7 +903,7 @@
 //Jumbo
 #define X_BED_SIZE 290
 #define Y_BED_SIZE 300
-#define Z_MAX_POS 280
+#define Z_MAX_POS 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1176,8 +1177,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (50*60)
+#define HOMING_FEEDRATE_XY (50*160)
+#define HOMING_FEEDRATE_Z  (50*160)
 
 // @section calibrate
 
