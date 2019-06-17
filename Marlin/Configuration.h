@@ -1,4 +1,4 @@
-/**
+  /**
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -382,9 +382,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 11.48
-  #define DEFAULT_Ki .56
-  #define DEFAULT_Kd 59.03
+  #define DEFAULT_Kp 12.24
+  #define DEFAULT_Ki 0.67
+  #define DEFAULT_Kd 55.89
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
