@@ -897,13 +897,13 @@
 
 // The size of the print bed
 //Jr Version
-//#define X_BED_SIZE 185
-//#define Y_BED_SIZE 235
-//#define Z_MAX_POS 235
+#define X_BED_SIZE 190
+#define Y_BED_SIZE 200
+#define Z_MAX_POS 180
 //Jumbo
-#define X_BED_SIZE 290
-#define Y_BED_SIZE 300
-#define Z_MAX_POS 300
+//#define X_BED_SIZE 290
+//#define Y_BED_SIZE 300
+//#define Z_MAX_POS 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
