@@ -897,13 +897,13 @@
 
 // The size of the print bed
 //Jr Version
-#define X_BED_SIZE 190
-#define Y_BED_SIZE 200
-#define Z_MAX_POS 180
+//#define X_BED_SIZE 190
+//#define Y_BED_SIZE 200
+//#define Z_MAX_POS 180
 //Jumbo
-//#define X_BED_SIZE 290
-//#define Y_BED_SIZE 300
-//#define Z_MAX_POS 300
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 300
+#define Z_MAX_POS 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1172,7 +1172,7 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (MIN_PROBE_X) //((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT (MIN_PROBE_X + 9) //((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
   #define Z_SAFE_HOMING_Y_POINT (MIN_PROBE_Y) //((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
 #endif
 
