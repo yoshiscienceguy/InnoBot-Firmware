@@ -624,14 +624,14 @@
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
 
 //Innobot Jumbo
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93.51}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 415}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 30, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -639,7 +639,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 1250, 1250, 400, 4000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -649,9 +649,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          1250    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1250    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1250    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -661,10 +661,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 8
-#define DEFAULT_YJERK                 8
-#define DEFAULT_ZJERK                  0.4
-#define DEFAULT_EJERK                 5.0
+#define DEFAULT_XJERK                 10
+#define DEFAULT_YJERK                 10
+#define DEFAULT_ZJERK                  0.3
+#define DEFAULT_EJERK                 4.0
 
 /**
  * S-Curve Acceleration
@@ -1049,13 +1049,13 @@
 
   // Set the boundaries for probing (where the probe can reach).
 //  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 10
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 20
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 10
+  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 20
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+10
+  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+20
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
-  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 10
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 40
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1177,8 +1177,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*160)
-#define HOMING_FEEDRATE_Z  (50*160)
+#define HOMING_FEEDRATE_XY (50*60)
+#define HOMING_FEEDRATE_Z  (5*60)
 
 // @section calibrate
 
@@ -1686,7 +1686,7 @@
 //
 #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 #define ST7920_DELAY_1 DELAY_NS(0)
-#define ST7920_DELAY_2 DELAY_NS(400)
+#define ST7920_DELAY_2 DELAY_NS(250)
 #define ST7920_DELAY_3 DELAY_NS(0)
 
 //
