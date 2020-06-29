@@ -902,7 +902,7 @@
 //#define Z_MAX_POS 180
 //Jumbo
 #define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define Y_BED_SIZE 230
 #define Z_MAX_POS 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1044,14 +1044,14 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 4
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
 //  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
   #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 20
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 20
+  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 40
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
   #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+20
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
@@ -1177,8 +1177,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (5*60)
+#define HOMING_FEEDRATE_XY (50*160)
+#define HOMING_FEEDRATE_Z  (50*160)
 
 // @section calibrate
 
