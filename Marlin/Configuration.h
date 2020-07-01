@@ -385,9 +385,9 @@
   //#define DEFAULT_Kd 54.36
 
   //Innobot Jumbo
-  #define DEFAULT_Kp 24.11
-  #define DEFAULT_Ki 2.23
-  #define DEFAULT_Kd 65.20
+  #define DEFAULT_Kp 24.38
+  #define DEFAULT_Ki 2.24
+  #define DEFAULT_Kd 66.41 
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -624,14 +624,14 @@
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
 
 //Innobot Jumbo
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 415}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, 415}
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 30, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 15, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -639,7 +639,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1250, 1250, 400, 4000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 400, 5000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -649,9 +649,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1250    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1250    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1250    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -794,7 +794,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 32  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 5  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.55   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 5
@@ -901,7 +901,7 @@
 //#define Y_BED_SIZE 200
 //#define Z_MAX_POS 180
 //Jumbo
-#define X_BED_SIZE 300
+#define X_BED_SIZE 240
 #define Y_BED_SIZE 230
 #define Z_MAX_POS 300
 
@@ -1051,11 +1051,11 @@
 //  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
   #define LEFT_PROBE_BED_POSITION MIN_PROBE_X + 20
 //  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
-  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 40
+  #define RIGHT_PROBE_BED_POSITION X_BED_SIZE - 20
 //  #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
   #define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE+20
 //  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
-  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 40
+  #define BACK_PROBE_BED_POSITION Y_BED_SIZE- 20
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
