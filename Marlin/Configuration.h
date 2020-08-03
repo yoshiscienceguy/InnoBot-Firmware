@@ -901,8 +901,8 @@
 //#define Y_BED_SIZE 200
 //#define Z_MAX_POS 180
 //Jumbo
-#define X_BED_SIZE 240
-#define Y_BED_SIZE 230
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 290
 #define Z_MAX_POS 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
