@@ -743,7 +743,7 @@
  */
 
 //fdp
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 409 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -752,7 +752,7 @@
  */
 
 //fdp
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 12, 120 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 12, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
