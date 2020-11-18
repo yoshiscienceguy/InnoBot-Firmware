@@ -624,7 +624,7 @@
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 107.5 }
 
 //Innobot Jumbo
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, 415}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -794,7 +794,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 32  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 5  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.55   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.9   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 5
