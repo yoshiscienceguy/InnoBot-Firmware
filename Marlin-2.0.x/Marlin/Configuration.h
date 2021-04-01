@@ -743,7 +743,7 @@
  */
 
 //fdp
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 397.5 }
 
 /**
  * Default Max Feed Rate (mm/s)
